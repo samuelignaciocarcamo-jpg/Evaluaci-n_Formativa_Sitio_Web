@@ -56,7 +56,31 @@
                 <label for="email">Correo Electrónico:</label>
                 <input type="email" id="email" name="email" required><br><br>
                 </fieldset> 
-                
+                <br><br>
+
+                 <fieldset>
+                    <legend>Información del Torneo</legend>
+                    
+                    <p>Nivel de Pelea:</p>
+                    <input type="radio" id="bajo" name="nivel_pelea" value="bajo" required>
+                    <label for="bajo">Bajo (Principiante)</label><br>
+
+                    <input type="radio" id="medio" name="nivel_pelea" value="medio">
+                    <label for="medio">Medio (Guerrero Z)</label><br>
+
+                    <input type="radio" id="alto" name="nivel_pelea" value="alto">
+                    <label for="alto">Alto (Super Saiyajin)</label><br><br>
+
+                    <label for="tipo_pelea">Pelea de Interés:</label><br>
+                    <select id="tipo_pelea" name="tipo_pelea" required>
+                        <option value="">Seleccione un tipo de pelea</option>
+                        <option value="individual">Combate Individual</option>
+                        <option value="duos">Combate en Duplas</option>
+                        <option value=" there-all">Torneo de las Artes Marciales (Todos contra todos)</option>
+                    </select><br><br>
+                </fieldset>
+                <br><br>
+
 
                 <label for="mensaje">Por que quieres participar en el torneo:</label><br>
                 <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br><br>
