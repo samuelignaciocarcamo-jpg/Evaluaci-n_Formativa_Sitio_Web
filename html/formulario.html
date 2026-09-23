@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -98,11 +98,22 @@
                 </fieldset>
                 <br><br>
 
-
-                <label for="mensaje">Por que quieres participar en el torneo:</label><br>
-                <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br><br>
-
-                <input type="submit" value="Enviar">
+               <fieldset> 
+    <legend>Documentación del Guerrero (Opcional)</legend>
+    <label for="documento">Adjunta tu certificado de antecedentes marciales:</label><br><br>
+    
+    <input type="file" id="documento" name="documento_guerrero" accept=".pdf,.doc,.docx" lang="es"><br><br>
+               </fieldset>
+              <br><br>
+              
+              <fieldset>
+                    <legend>Motivación del Guerrero</legend>
+                    <label for="mensaje">¿Por qué quieres participar en el torneo?:</label><br><br>
+                    <textarea id="mensaje" name="mensaje" rows="4" cols="50" placeholder="Escribe aquí tu respuesta..." required></textarea>
+                </fieldset>
+                <br><br>
+           
+                <input type="submit" value="Enviar" text-align="center">
             </form>
         </article>
 
