@@ -1,18 +1,27 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <script>
+        function apagarAmpolleta() {
+            document.getElementById("imgapagada").style.display = "block";
+            document.getElementById("imgprendida").style.display = "none";
+        }
+
         function encenderAmpolleta() {
-            document.getElementById("ampolleta").src = "../img/ampolleta_encendida.jpg"; //
+            document.getElementById("imgapagada").style.display = "none";
+            document.getElementById("imgprendida").style.display = "block";
         }
     </script>
 </head>
 <body>
-    <h1 style="text-align: center;">Ejemplo de JavaScript</h1>
-    <div style="display: flex; justify-content: center; align-items: center;">
-    <img id="imgApagada" style" src="../img/apagada.jpg" alt="Imagen apagada">
-<img id=""
-    </div>
-
+<h1 style="text-align: center;"> Ejemplo de JavaScript</h1>
+<div style="display: flex; justify-content: center; align-items: center;">
+<img id="imgapagada" src="../img/ampolleta_apagada.jpg" alt=" Ampolleta apagada" id="ampolleta" style="width: 200px; height: 200px; cursor: pointer;">
+<img id="imgprendida" src="../img/ampolleta_prendida.jpg" alt="Ampolleta prendida" id="ampolletaPrendida" style="width: 200px; height: 200px; cursor: pointer;">
+</div style="display: flex; justify-content: center; align-items: center;">
+<button style="margin: 10px;" onclick="apagarAmpolleta()">Apagar</button>
+<button style="margin: 10px;" onclick="encenderAmpolleta()">Encender</button>
 </body>
 </html>
