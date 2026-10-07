@@ -1,2 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title> 
+    <script>
+        // Modificamos las funciones para que muestren el resultado en el HTML
+        function sumarNumeros() {
+            let num1 = 5;
+            let num2 = 10;
+            let resultado = num1 + num2;
+            document.getElementById("pantalla").innerText = "Resultado: " + resultado;
+        }
+        function restarNumeros() {
+            let num1 = 10;
+            let num2 = 5;
+            let resultado = num1 - num2;
+            document.getElementById("pantalla").innerText = "Resultado: " + resultado;
+        }
+        function multiplicarNumeros() {
+            let num1 = 5;
+            let num2 = 10;
+            let resultado = num1 * num2;
+            document.getElementById("pantalla").innerText = "Resultado: " + resultado;
+        }
+        function dividirNumeros() {
+            let num1 = 10;
+            let num2 = 5;
+            let resultado = num1 / num2;
+            document.getElementById("pantalla").innerText = "Resultado: " + resultado;
+        }
+    </script>
+</head>
+<body>
+    <h1 style="text-align: center;">Calculadora</h1>
+    
+    <!-- Agregamos este contenedor para ver el resultado en la página -->
+    <h2 id="pantalla" style="text-align: center; color: #333;">Resultado: 0</h2>
 
-
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <button style="margin: 10px;" onclick="sumarNumeros()">Sumar</button>
+        <button style="margin: 10px;" onclick="restarNumeros()">Restar</button>
+        <button style="margin: 10px;" onclick="multiplicarNumeros()">Multiplicar</button>
+        <button style="margin: 10px;" onclick="dividirNumeros()">Dividir</button>
+    </div>
+</body>
+</html>
