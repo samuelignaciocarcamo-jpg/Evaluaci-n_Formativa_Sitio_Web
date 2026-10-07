@@ -3,28 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de JS</title>
-
+    <script src=""../js/ejemplodejavascript.js"></script>
+    <title>Ejemplo de JavaScript</title>
     <script>
-        // Código JavaScript aquí
-        function apagarAmpolleta(){
-            document.getElementById("imgEncendida").src="../img/apagada.jpg"; // Ocultar la imagen encendida al cargar la página
+        // Código Java Script
+        function apagarAmpolleta() {
+            document.getElementById("apagada").style.display = "block";
+            document.getElementById("encendida").style.display = "none";
         }
 
-        function encenderAmpolleta(){
-            document.getElementById("imgEncendida").src="../img/encendida.jpg"; // Mostrar la imagen encendida al cargar la página
+        function encenderAmpolleta() {
+            document.getElementById("encendida").style.display = "block";
+            document.getElementById("apagada").style.display = "none";
         }
-        
     </script>
 </head>
 <body>
     <h1 style="text-align: center;">Ejemplo de JavaScript</h1>
     <div style="display: flex; justify-content: center; align-items: center;">
-    <img id="imgEncendida" style="align-items: center;" alt="Imagen encendida">;
-   </div>
-   <div style="display: flex; justify-content: center; align-items: center;">
-    <button style="margin: 10px;" onclick="apagarAmpolleta()">Apagar ampolleta</button>
-    <button style="margin: 10px;" onclick="encenderAmpolleta()">Encender ampolleta</button>
+        <img id="apagada" src="../img/apagada.jpg" alt="Imagen apagada" style="max-width: 100%; height: auto; max-height: 300px;">
+        <img id="encendida" src="../img/encendida.jpg" alt="Imagen encendida" style="max-width: 100%; height: auto; max-height: 300px; display: none;">
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <button style="margin: 10px;" onclick="apagarAmpolleta()">apagar ampolleta</button>
+        <button style="margin: 10px;" onclick="encenderAmpolleta()">Encender ampolleta</button>
     </div>
 </body>
 </html>
