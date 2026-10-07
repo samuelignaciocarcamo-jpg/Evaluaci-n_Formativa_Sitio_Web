@@ -10,7 +10,7 @@
       }
 
       function sumarNumeros() {
-        let num1 =5;
+        let num1 = 5;
         let num2 = 10;
         let resultado = num1 + num2;
         return suma;
@@ -20,4 +20,16 @@
         let num2 = 5;
         let resultado = num1 - num2;
         return resta;
+      }
+        function multiplicarNumeros() {
+        let num1 = 5;
+        let num2 = 10;
+        let resultado = num1 * num2;
+        return multiplicacion;
+      }
+      function dividirNumeros() {
+        let num1 = 10;
+        let num2 = 5;
+        let resultado = num1 / num2;
+        return division;
       }
