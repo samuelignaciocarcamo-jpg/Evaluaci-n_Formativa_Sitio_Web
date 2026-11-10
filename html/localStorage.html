@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input id="tarea" placeholder="Ingrese su tarea" type="text">
+    <button id="guardar" onclick="guardar()">Guardar</button>
+    <ul id="lista"></ul>
+
+    <script>
+        
+        const lista = document.getElementById('lista');
+        const tareaInput = document.getElementById('tarea');
+
+        function guardar() {
+            const tarea = tareaInput.value;
+            if (tarea) {
+                let tareas = JSON.parse(localStorage.getItem('tareas')) || [];
+                tareas.push(tarea);
+                localStorage.setItem('tareas', JSON.stringify(tareas));
+                tareaInput.value = '';
+                mostrarTareas();
+            }
+        }
+
+        function mostrarTareas() {
+            lista.innerHTML = '';
+            let tareas = JSON.parse(localStorage.getItem('tareas')) || [];
+            tareas.forEach((tarea, index) => {
+                const li = document.createElement('li');
+                li.textContent = tarea;
+                lista.appendChild(li);
+            });
+        }
+
+        // Mostrar las tareas al cargar la página
+        mostrarTareas();
+        </script>
+
+</body>
+</html>
