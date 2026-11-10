@@ -1,0 +1,14 @@
+[
+
+    {"nombre": "Juan Pérez", "edad": 30,"correo": "juan.perez@example.com"},
+    {"nombre": "María López", "edad": 25,"correo": "maria.lopez@example.com"},
+    {"nombre": "Carlos García", "edad": 28,"correo": "carlos.garcia@example.com"},
+    {"nombre": "Ana Martínez", "edad": 22,"correo": "ana.martinez@example.com"},
+    {"nombre": "Luis Fernández", "edad": 35,"correo": "luis.fernandez@example.com"},
+    {"nombre": "Sofía Rodríguez", "edad": 27,"correo": "sofia.rodriguez@example.com"},
+    {"nombre": "Diego Sánchez", "edad": 31,"correo": "diego.sanchez@example.com"},
+    {"nombre": "Valentina Torres", "edad": 29,"correo": "valentina.torres@example.com"},
+    {"nombre": "Javier Ramírez", "edad": 33,"correo": "javier.ramirez@example.com"},
+    {"nombre": "Camila Gómez", "edad": 24,"correo": "camila.gomez@example.com"}
+
+]

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lista de Personas</h1>
+    <ol id="lista"></ol>
+
+    <script>
+        const lista = document.getElementById('lista');
+
+        fetch('../json/datos.json')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(persona => {
+                    const li = document.createElement('li');
+                    li.textContent = `Nombre: ${persona.nombre} - Edad: ${persona.edad} - Correo: ${persona.correo}`;
+                    lista.appendChild(li);
+                });
+            })
+            .catch(error => console.error('Error al cargar el archivo JSON:', error));
+    </script>
+
+    <footer>
+        <p>Derechos reservados &copy; 2026</p>
+        <p>Francisco Calfun</p>
+    </footer>
+</body>
+</html>
