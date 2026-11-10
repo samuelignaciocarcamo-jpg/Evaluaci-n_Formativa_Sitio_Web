@@ -9,30 +9,21 @@
         document.getElementById("apagada").style.display = "none";
       }
 
-    function sumarNumeros() {
-  let num1 = 5;
-  let num2 = 10;
-  let resultado = num1 + num2;
-  return resultado; 
-}
+  function sumaDosNumeros(){
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let num2 = parseFloat(document.getElementById("num2").value);
+        let suma = num1 + num2;
+        document.getElementById("resultado").value = suma; // Mostrar el resultado en el campo de texto
+    }
+    function restaDosNumeros(){
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let num2 = parseFloat(document.getElementById("num2").value);
+        let resta = num1 - num2;
+        document.getElementById("resultado").value = resta; // Mostrar el resultado en el campo de texto
+    }
 
-function restarNumeros() {
-  let num1 = 10;
-  let num2 = 5;
-  let resultado = num1 - num2;
-  return resultado; 
-}
-
-function multiplicarNumeros() {
-  let num1 = 5;
-  let num2 = 10;
-  let resultado = num1 * num2;
-  return resultado; 
-}
-
-function dividirNumeros() {
-  let num1 = 10;
-  let num2 = 5;
-  let resultado = num1 / num2;
-  return resultado; 
-}
+    $(document).ready(function() {
+        $("#btnSuma").click(function() {
+            sumaDosNumeros();
+        });
+  })
