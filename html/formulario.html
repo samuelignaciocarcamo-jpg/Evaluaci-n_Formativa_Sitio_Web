@@ -6,13 +6,12 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../img/icon.jpg" type="image/x-icon">
     <title>Mi primer Sitio</title>
-    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <header style="text-align: center;">
-        <a href="/">
-    >
-    <img src="../img/encabezado.jpg" alt="Logo de mi sitio web" width="1000" height="200">
+        <a href="../index.html">
+            <img src="../img/encabezado.jpg" alt="Logo de mi sitio web" width="1000" height="200">
         </a>
         <h1>Bienvenido a mi sitio web</h1>
     </header>
@@ -30,104 +29,344 @@
     <section>
         <article>
             <h2>Formulario de Inscripción</h2>
-            <form action="procesar_formulario.php" method="post">
+
+            <div id="mensajeExito" style="display: none; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: 12px; width: 60%; margin: 15px auto; border-radius: 5px; font-weight: bold;">
+                ¡Se registró con éxito todo!
+            </div>
+
+            <form id="formTorneo" action="#" method="post">
 
                 <fieldset>
                     <legend>Información Personal</legend>
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required><br><br>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre">
+                    <span id="errorNombre" class="error" style="color: red; font-size: 13px; display: none;"><br>El campo Nombre es obligatorio.</span><br><br>
 
-                <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido" required><br><br>
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido">
+                    <span id="errorApellido" class="error" style="color: red; font-size: 13px; display: none;"><br>El campo Apellido es obligatorio.</span><br><br>
 
-                <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br><br>
+                    <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
+                    <span id="errorFecha" class="error" style="color: red; font-size: 13px; display: none;"><br>Debe seleccionar una fecha de nacimiento.</span><br><br>
 
-                <label for="genero">Género:</label>
-                <select id="genero" name="genero" required>
-                    <option value="">Seleccione</option>
-                    <option value="masculino">Masculino</option>
-                    <option value="femenino">Femenino</option>
-                    <option value="otro">Otro</option>  
-                </select><br><br>
+                    <label for="genero">Género:</label>
+                    <select id="genero" name="genero">
+                        <option value="">Seleccione</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="otro">Otro</option>  
+                    </select>
+                    <span id="errorGenero" class="error" style="color: red; font-size: 13px; display: none;"><br>Debe seleccionar un género.</span><br><br>
 
-                <label for="telefono">Teléfono:</label>
-                <input type="tel" id="telefono" name="telefono" required><br><br> 
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono">
+                    <span id="errorTelefono" class="error" style="color: red; font-size: 13px; display: none;"><br>El campo Teléfono es obligatorio.</span><br><br>
 
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" id="email" name="email" required><br><br>
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email">
+                    <span id="errorEmail" class="error" style="color: red; font-size: 13px; display: none;"><br>El campo Correo Electrónico es obligatorio.</span><br><br>
                 </fieldset> 
                 <br><br>
 
-                 <fieldset>
+                <fieldset>
                     <legend>Información del Torneo</legend>
                     
                     <p>Nivel de Pelea:</p>
-                    <input type="radio" id="bajo" name="nivel_pelea" value="bajo" required>
+                    <input type="radio" id="bajo" name="nivel_pelea" value="bajo">
                     <label for="bajo">Bajo (Principiante)</label><br>
 
                     <input type="radio" id="medio" name="nivel_pelea" value="medio">
                     <label for="medio">Medio (Guerrero Z)</label><br>
 
                     <input type="radio" id="alto" name="nivel_pelea" value="alto">
-                    <label for="alto">Alto (Super Saiyajin)</label><br><br>
+                    <label for="alto">Alto (Super Saiyajin)</label>
+                    <span id="errorNivel" class="error" style="color: red; font-size: 13px; display: none;"><br>Debe seleccionar un nivel de pelea.</span><br><br>
 
                     <label for="tipo_pelea">Pelea de Interés:</label><br>
-                    <select id="tipo_pelea" name="tipo_pelea" required>
+                    <select id="tipo_pelea" name="tipo_pelea">
                         <option value="">Seleccione un tipo de pelea</option>
                         <option value="individual">Combate Individual</option>
                         <option value="duos">Combate en Duplas</option>
-                        <option value=" there-all">Torneo de las Artes Marciales (Todos contra todos)</option>
-                    </select><br><br>
+                        <option value="todos">Torneo de las Artes Marciales (Todos contra todos)</option>
+                    </select>
+                    <span id="errorTipoPelea" class="error" style="color: red; font-size: 13px; display: none;"><br>Debe seleccionar un tipo de pelea.</span><br><br>
                 </fieldset>
                 <br><br>
 
-                 <fieldset>
+                <fieldset>
                     <legend>Áreas de Interés en el Torneo</legend>
                     <p>Selecciona los elementos o recompensas que te interesan:</p>
-                    <input type="checkbox" id="esferas" name="intereses[]" value="esferas">
+                    <input type="checkbox" id="esferas" name="intereses[]" value="Esferas del Dragón">
                     <label for="esferas"> Reunir las Esferas del Dragón</label><br>
 
-                    <input type="checkbox" id="entrenamiento" name="intereses[]" value="entrenamiento">
+                    <input type="checkbox" id="entrenamiento" name="intereses[]" value="Habitación del Tiempo">
                     <label for="entrenamiento"> Entrenar en la Habitación del Tiempo</label><br>
 
-                    <input type="checkbox" id="medallas" name="intereses[]" value="medallas">
+                    <input type="checkbox" id="medallas" name="intereses[]" value="Medallas del Torneo">
                     <label for="medallas"> Ganar las Medallas del Torneo</label><br>
 
-                    <input type="checkbox" id="comida" name="intereses[]" value="comida">
+                    <input type="checkbox" id="comida" name="intereses[]" value="Dinero por ronda">
                     <label for="comida"> Dinero por ronda ganada</label><br>
                 </fieldset>
                 <br><br>
 
-               <fieldset> 
-    <legend>Documentación del Guerrero (Opcional)</legend>
-    <label for="documento">Adjunta tu certificado de antecedentes marciales:</label><br><br>
-    
-    <input type="file" id="documento" name="documento_guerrero" accept=".pdf,.doc,.docx" lang="es"><br><br>
-               </fieldset>
-              <br><br>
+                <fieldset> 
+                    <legend>Documentación del Guerrero (Opcional)</legend>
+                    <label for="documento">Adjunta tu certificado de antecedentes marciales:</label><br><br>
+                    <input type="file" id="documento" name="documento_guerrero" accept=".pdf,.doc,.docx" lang="es"><br><br>
+                </fieldset>
+                <br><br>
               
-              <fieldset>
-                    <legend>Motivación del Guerrero</legend>
+                <fieldset>
+                    <legend>Motivación del Guerrero (Opcional)</legend>
                     <label for="mensaje">¿Por qué quieres participar en el torneo?:</label><br><br>
-                    <textarea id="mensaje" name="mensaje" rows="4" cols="50" placeholder="Escribe aquí tu respuesta..." required></textarea>
+                    <textarea id="mensaje" name="mensaje" rows="4" cols="50" placeholder="Escribe aquí tu respuesta..."></textarea>
                 </fieldset>
                 <br><br>
            
-                 <div style="text-align: center;">
-                    <input type="submit" value="Enviar formulario">
+                <div style="text-align: center;">
+                    <input type="submit" id="btnEnviar" value="Enviar formulario">
+                    <button type="button" id="btnCancelar" style="display: none;">Cancelar edición</button>
                 </div>
-                
             </form>
         </article>
 
+        <br><hr><br>
 
-     <footer>
+        <article>
+            <h2>Guerreros Inscritos</h2>
+            <table border="1" style="width: 85%; margin: 0 auto; background-color: white; border-collapse: collapse;">
+                <thead>
+                    <tr style="background-color: #e67e22; color: white;">
+                        <th>Nombre</th>
+                        <th>Contacto</th>
+                        <th>Nivel</th>
+                        <th>Pelea</th>
+                        <th>Intereses</th>
+                        <th>Motivación</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaGuerreros">
+                </tbody>
+            </table>
+        </article>
+    </section>
+
+    <footer>
         <p>Muchas gracias por visitar nuestro sitio web, espero vuelvas pronto</p>
         <p>Samuel Cárcamo</p>
         <p>Derechos reservados &copy; 2026</p>
     </footer>
 
-</body>
+    <script>
+        var indiceEditar = -1;
 
+        $(document).ready(function() {
+            $(".error").hide();
+            $("#mensajeExito").hide();
+
+            mostrarRegistros();
+
+            $("#nombre").blur(function() {
+                if ($(this).val().trim() == "") {
+                    $("#errorNombre").show();
+                } else {
+                    $("#errorNombre").hide();
+                }
+            });
+
+            $("#apellido").blur(function() {
+                if ($(this).val().trim() == "") {
+                    $("#errorApellido").show();
+                } else {
+                    $("#errorApellido").hide();
+                }
+            });
+
+            $("#fecha_nacimiento").blur(function() {
+                if ($(this).val() == "") {
+                    $("#errorFecha").show();
+                } else {
+                    $("#errorFecha").hide();
+                }
+            });
+
+            $("#genero").blur(function() {
+                if ($(this).val() == "") {
+                    $("#errorGenero").show();
+                } else {
+                    $("#errorGenero").hide();
+                }
+            });
+
+            $("#telefono").blur(function() {
+                if ($(this).val().trim() == "") {
+                    $("#errorTelefono").show();
+                } else {
+                    $("#errorTelefono").hide();
+                }
+            });
+
+            $("#email").blur(function() {
+                if ($(this).val().trim() == "") {
+                    $("#errorEmail").show();
+                } else {
+                    $("#errorEmail").hide();
+                }
+            });
+
+            $("#tipo_pelea").blur(function() {
+                if ($(this).val() == "") {
+                    $("#errorTipoPelea").show();
+                } else {
+                    $("#errorTipoPelea").hide();
+                }
+            });
+
+            $("#formTorneo").submit(function(event) {
+                event.preventDefault();
+
+                var valido = true;
+
+                var nombre = $("#nombre").val().trim();
+                var apellido = $("#apellido").val().trim();
+                var fecha = $("#fecha_nacimiento").val();
+                var genero = $("#genero").val();
+                var telefono = $("#telefono").val().trim();
+                var email = $("#email").val().trim();
+                var nivel = $("input[name='nivel_pelea']:checked").val();
+                var tipoPelea = $("#tipo_pelea").val();
+                var mensaje = $("#mensaje").val().trim();
+
+                var intereses = [];
+                $("input[name='intereses[]']:checked").each(function() {
+                    intereses.push($(this).val());
+                });
+
+                if (nombre == "") { $("#errorNombre").show(); valido = false; } else { $("#errorNombre").hide(); }
+                if (apellido == "") { $("#errorApellido").show(); valido = false; } else { $("#errorApellido").hide(); }
+                if (fecha == "") { $("#errorFecha").show(); valido = false; } else { $("#errorFecha").hide(); }
+                if (genero == "") { $("#errorGenero").show(); valido = false; } else { $("#errorGenero").hide(); }
+                if (telefono == "") { $("#errorTelefono").show(); valido = false; } else { $("#errorTelefono").hide(); }
+                if (email == "") { $("#errorEmail").show(); valido = false; } else { $("#errorEmail").hide(); }
+                if (!nivel) { $("#errorNivel").show(); valido = false; } else { $("#errorNivel").hide(); }
+                if (tipoPelea == "") { $("#errorTipoPelea").show(); valido = false; } else { $("#errorTipoPelea").hide(); }
+
+                if (!valido) {
+                    alert("Por favor, complete todos los campos obligatorios marcados en rojo.");
+                    return;
+                }
+
+                var listaGuerreros = JSON.parse(localStorage.getItem("guerrerosTorneo")) || [];
+
+                var guerrero = {
+                    nombre: nombre,
+                    apellido: apellido,
+                    fecha: fecha,
+                    genero: genero,
+                    telefono: telefono,
+                    email: email,
+                    nivel: nivel,
+                    tipoPelea: tipoPelea,
+                    intereses: intereses,
+                    mensaje: mensaje != "" ? mensaje : "Sin motivación"
+                };
+
+                if (indiceEditar == -1) {
+                    listaGuerreros.push(guerrero);
+                    alert("¡Se registró con éxito todo!");
+                    $("#mensajeExito").text("¡Se registró con éxito todo! El guerrero fue inscrito en el torneo.").fadeIn();
+                } else {
+                    listaGuerreros[indiceEditar] = guerrero;
+                    indiceEditar = -1;
+                    $("#btnEnviar").val("Enviar formulario");
+                    $("#btnCancelar").hide();
+                    alert("¡Registro actualizado con éxito!");
+                    $("#mensajeExito").text("¡Los datos del guerrero se actualizaron con éxito!").fadeIn();
+                }
+
+                localStorage.setItem("guerrerosTorneo", JSON.stringify(listaGuerreros));
+
+                $("#formTorneo")[0].reset();
+                mostrarRegistros();
+            });
+
+            $("#btnCancelar").click(function() {
+                indiceEditar = -1;
+                $("#formTorneo")[0].reset();
+                $(".error").hide();
+                $("#btnEnviar").val("Enviar formulario");
+                $(this).hide();
+            });
+        });
+
+        function mostrarRegistros() {
+            var listaGuerreros = JSON.parse(localStorage.getItem("guerrerosTorneo")) || [];
+            var html = "";
+
+            if (listaGuerreros.length == 0) {
+                html = "<tr><td colspan='7' style='text-align:center;'>Aún no hay guerreros inscritos.</td></tr>";
+            } else {
+                for (var i = 0; i < listaGuerreros.length; i++) {
+                    var interesesTexto = listaGuerreros[i].intereses.length > 0 ? listaGuerreros[i].intereses.join(", ") : "Ninguno";
+                    
+                    html += "<tr>";
+                    html += "<td>" + listaGuerreros[i].nombre + " " + listaGuerreros[i].apellido + "</td>";
+                    html += "<td>" + listaGuerreros[i].email + "<br>(" + listaGuerreros[i].telefono + ")</td>";
+                    html += "<td>" + listaGuerreros[i].nivel + "</td>";
+                    html += "<td>" + listaGuerreros[i].tipoPelea + "</td>";
+                    html += "<td>" + interesesTexto + "</td>";
+                    html += "<td>" + listaGuerreros[i].mensaje + "</td>";
+                    html += "<td>";
+                    html += "<button type='button' class='btn-editar' onclick='cargarEdicion(" + i + ")'>Editar</button> ";
+                    html += "<button type='button' class='btn-eliminar' onclick='eliminarGuerrero(" + i + ")'>Eliminar</button>";
+                    html += "</td>";
+                    html += "</tr>";
+                }
+            }
+
+            $("#tablaGuerreros").html(html);
+        }
+
+        function cargarEdicion(index) {
+            var listaGuerreros = JSON.parse(localStorage.getItem("guerrerosTorneo")) || [];
+            var g = listaGuerreros[index];
+
+            $("#nombre").val(g.nombre);
+            $("#apellido").val(g.apellido);
+            $("#fecha_nacimiento").val(g.fecha);
+            $("#genero").val(g.genero);
+            $("#telefono").val(g.telefono);
+            $("#email").val(g.email);
+            $("#tipo_pelea").val(g.tipoPelea);
+            $("#mensaje").val(g.mensaje == "Sin motivación" ? "" : g.mensaje);
+
+            $("input[name='nivel_pelea'][value='" + g.nivel + "']").prop("checked", true);
+
+            $("input[name='intereses[]']").prop("checked", false);
+            for (var j = 0; j < g.intereses.length; j++) {
+                $("input[name='intereses[]'][value='" + g.intereses[j] + "']").prop("checked", true);
+            }
+
+            $(".error").hide();
+            $("#mensajeExito").hide();
+            indiceEditar = index;
+            $("#btnEnviar").val("Guardar cambios");
+            $("#btnCancelar").show();
+        }
+
+        function eliminarGuerrero(index) {
+            var listaGuerreros = JSON.parse(localStorage.getItem("guerrerosTorneo")) || [];
+            var nombreCompleto = listaGuerreros[index].nombre + " " + listaGuerreros[index].apellido;
+
+            if (confirm("¿Está seguro de eliminar la inscripción de " + nombreCompleto + "?")) {
+                listaGuerreros.splice(index, 1);
+                localStorage.setItem("guerrerosTorneo", JSON.stringify(listaGuerreros));
+                mostrarRegistros();
+            }
+        }
+    </script>
+</body>
 </html>
