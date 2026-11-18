@@ -1,15 +1,11 @@
-cssheader {
+header {
     text-align: center;
 }
 
 body {
     background-color: #dacf79;
     text-align: center; 
-}
-
-li {
-    display: inline-block;
-    margin-right: 20px;
+    overflow-x: hidden;
 }
 
 nav {
