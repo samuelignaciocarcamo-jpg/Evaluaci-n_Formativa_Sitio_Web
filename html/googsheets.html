@@ -66,7 +66,7 @@
     <script>
         const lista = document.getElementById('lista');
 
-        fetch('Agregar la ruta del archivo CSV aquí')
+        fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQUfhAAm33LuAxSVLJtUESRzDPR9OFsVOzDz0VDw5OWLBWDDG5tTr9D5YXTSm7r3QW-AdGJw3fmydZQ/pub?gid=0&single=true&output=csv')
             .then(response => response.text())
             .then(data => {
                 const rows = data.split('\n').slice(1);
